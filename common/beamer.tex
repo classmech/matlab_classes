@@ -1,0 +1,262 @@
+% -*- program: xelatex -*-
+%\documentclass[12pt, compress]{beamer} 
+\documentclass[11pt, compress]{beamer}       
+%\documentclass[notes=only]{beamer}
+
+\usepackage{fontspec}
+	
+\setsansfont{PT Sans}
+\setmonofont{Liberation Mono}
+
+\usepackage{beamerthemesplit} 
+\usefonttheme[onlymath]{serif}
+%\DeclareFontEncoding{T1}
+\fontencoding{T1}
+
+%\usepackage[T2A]{fontenc} 
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{listings}
+
+\usepackage{amsmath,amssymb,amsthm}
+\hypersetup{unicode=true}
+\usepackage{graphics,graphicx}
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+\usepackage{booktabs}
+%\usepackage{media9}
+\usepackage[super]{natbib}
+\usepackage{color}
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\definecolor{codecolor}{RGB}{0,120,0}
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{light-green}{rgb}{0.93, 1, 0.8}
+\definecolor{light-yellow}{rgb}{1,1,0.85}
+\definecolor{dark-blue}{rgb}{0,0,0.6}
+\definecolor{dark-red}{rgb}{0.7,0,0.0}
+\definecolor{dark-green}{RGB}{10,150,0}
+
+%\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\textcolor{green}{\ding{51}}}
+\newcommand{\xmark}{\textcolor{red}{\ding{55}}}
+
+\setbeamercolor{frametitle}{fg=dark-red,bg=gray!10}
+\setbeamerfont{title}{series=\bfseries,parent=structure}
+\setbeamerfont{frametitle}{series=\bfseries,parent=structure}
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{navigation symbols}{}
+
+\newcommand{\code}[1]{\textcolor{dark-green}{\texttt{#1}}}
+\newcommand{\cleartitlepage}[1]{\begin{frame}[plain]\begin{center}\textsc{#1}\end{center}\end{frame}}
+\renewcommand{\emph}[1]{\textcolor{dark-blue}{#1}}
+\newcommand{\emphb}[1]{\textcolor{dark-blue}{\textbf{#1}}}
+\newcommand{\lstcomment}[1]{\textcolor{dark-green}{\# \texttt{#1}}}
+
+\usepackage{dirtree}
+
+\usetheme{CambridgeUS}
+\usecolortheme{lily}
+
+\lstset{basicstyle=\ttfamily,
+    language=python,    
+    keepspaces=true,
+    extendedchars=\true,
+    basicstyle={\small},
+    breaklines=true,
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{blue}},
+    identifierstyle={ \bf \color{black} },
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,
+    numbers=left,%
+    numberstyle={\scriptsize \color{gray}},
+    numbersep=7pt, 
+    emph=[1]{case,switch,otherwise,nonlocal,as,yield, with},emphstyle=[1]\color{blue}, 
+    frame=single,    
+    rulecolor=\color{red},    
+    backgroundcolor=\color{light-gray},
+    xleftmargin=0.3cm,
+    frame=l,framesep=4pt,framerule=0.5pt,
+    escapechar=|
+    %lineskip=-1.0pt,
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\usetikzlibrary{positioning} 
+\tikzset{cbutton/.style={rectangle,minimum width=10mm,thick,draw=red!50!black!50,
+top color=white,bottom color=red!50!black!30}}
+\tikzset{mbutton/.style={rectangle,minimum width=10mm,thick,draw=black!20,
+top color=white,bottom color=black!30}}
+
+\usetikzlibrary{arrows,shapes}
+\tikzstyle{every picture}+=[remember picture]
+
+
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%  
+  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%  
+  \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+ 
+\AtBeginSection[]{
+  \begin{frame}[plain]
+  %\vfill  
+  \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);  
+  \fill[color=dark-red]   (-1cm, 3.9cm) rectangle(\the\paperwidth, 5.9cm);
+  %\usebeamerfont{title}\insertsectionhead\par%
+  %\node[text width=\the\paperwidth,align=center] at (current page.center) {\color{ExecusharesWhite}\Large\textbf{\insertsectionhead}};  
+  \node[text width=\the\paperwidth,align=center] at (6cm,4.9cm) {\color{white}\Large\textbf{\insertsectionhead}};  
+  \end{tikzpicture}
+  \end{frame}
+}
+
+% ============================================================================
+
+\title[Python: ввод и вывод]{Ввод и вывод}
+\subtitle{Технологии и языки программирования}
+\author[Самарский университет]{Юдинцев В. В.}
+\institute{Кафедра теоретической механики\\Самарский университет}
+\date{\today}
+
+
+\begin{document}
+
+{
+\setbeamercolor{background canvas}{bg=light-yellow} 
+\usebackgroundtemplate[background]{}
+%\begin{frame}[plain]
+%\begin{figure}[h]
+%  \centering
+%  \includegraphics[width=0.3\textwidth]{../common/Python_logo_and_wordmark.pdf}
+%\end{figure}
+%\maketitle
+%\end{frame}
+}
+
+% \frame{\frametitle{Содержание}\tableofcontents}
+
+%\section{Форматированный вывод}
+
+% axis style, ticks, etc
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the                     
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+                    label style={font=\small},
+                    tick label style={font=\small}  
+                    }}
+
+\begin{frame}[c, fragile]
+\frametitle{Действие постоянной силы}
+\begin{columns}
+\column{0.45\linewidth}
+\begin{tikzpicture} 
+\usetikzlibrary{decorations.pathmorphing,patterns}
+\tikzstyle{spring}=[thick,decorate,decoration={zigzag,pre length=0.1cm,post
+  length=0.1cm,segment length=6}]
+\draw[spring] (0.5,0) -- (4,0);  
+\draw[thick,red,->] (4,0) -- (5,0) node[anchor=south east] {$\boldsymbol P$};  
+\draw[thick,red,->] (4,0) -- (2.5,0) node[anchor=south] {$\boldsymbol F = c x$};  
+\node[circle,fill=blue,inner sep=1.5mm, text=white] (a) at (4,0) {m};
+\fill [pattern = north east lines] (0,-1) rectangle (0.5,1);
+\draw [->] (0.5,-0.6) -- (4,-0.6) node[anchor = north east] {$x$};
+\draw [-] (4,-0.7) -- (4,-0.4);
+\end{tikzpicture}
+\begin{tikzpicture} 
+\begin{axis}[xlabel=,ylabel=, height=6cm, width=5cm,
+		ymin=0,ymax=150,
+		ytick = {0,100,150},
+		yticklabels = {0, $P$, },		
+		xmin=0,xmax=2,
+		xtick = {0,1,2},
+      	xticklabels = {0, $\tau$, t}] 
+\addplot[color=red,mark=o] coordinates { (0,100) (1,100) (1,0)}; 
+\end{axis} 
+\end{tikzpicture}
+\column{0.55\linewidth}
+Зависимость упругой силы $F$ от продолжительности действия внешней силы $P$: 
+$$
+	F = P \sqrt{ 2-2 \cos \omega \tau }
+$$
+При 
+$$
+\tau = \frac{\pi}{\omega} = \pi \sqrt{\frac{m}{c}} ,
+$$
+т. е. при продолжительности действия силы $P$ равной половине периода собcтвенных колебаний системы груз-пружина ($T=2 \pi / \omega$), максимальное усилие в пружине в два раза больше силы P
+$$
+	F(\tau = \pi \sqrt{m/c} ) = 2 P
+$$
+\end{columns}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{Решение}
+Уравнение движения системы при действии силы $P$
+\begin{equation}
+	m \ddot{x} = P - c x, 	
+\end{equation}
+Начальные условия
+\begin{equation}
+	x_0 = 0, \quad \dot{x}_0 = 0
+\end{equation}
+Решение
+\begin{equation}
+	x = c_1 \sin \omega t + c_2 \cos \omega t + P/c, \quad \omega = \sqrt{c/m}
+\end{equation}
+Для начальных условий $c_1 = 0$, $c_2 = - P/c$ и 
+\begin{equation}
+	x = \frac{P}{c}\left( 1-\cos \omega t \right), \quad \dot x = \frac{P \omega }{c} \sin \omega t 
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]
+Полная энергия системы в момент окончания действия силы $P$
+\begin{equation}
+	E_\tau = \frac{c x_\tau^2}{2} + \frac{m \dot{x}_\tau^2}{2}
+\end{equation}
+Полная энергия системы в момент максимальной деформации пружины
+\begin{equation}
+	E = \frac{c x_{max}^2}{2} 
+\end{equation}
+Учитывая, что 
+$$
+	\frac{c x_\tau^2}{2} + \frac{m \dot{x}_\tau^2}{2} = \frac{c x_{max}^2}{2} 
+$$
+Максимальная деформация
+\begin{equation}
+	x_{max}^2 = \frac{P^2}{c^2}\left( 1-\cos \omega \tau \right)^2+\frac{P^2} {c^2} \sin^2 \omega \tau  
+\end{equation}
+Максимальная сила
+\begin{equation}
+	F = c x_{max} = P \sqrt{2 (1-\cos \omega \tau)}
+\end{equation}
+
+	
+\end{frame}
+
+
+\end{document}

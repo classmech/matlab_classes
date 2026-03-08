@@ -1,0 +1,14 @@
+\frametitle{Пример файл-функции событий events.m}
+$$
+\boldsymbol q=(x,V_x,y,V_y)^T
+$$
+\begin{lstlisting}
+function [ value, isterminal, direction ] = events(t, q)
+ % Следим за изменением переменной y
+ value = q(3);
+ % Остановить процесс,
+ isterminal= 1;
+ % если q(3) станет равна нулю и будет убывать
+ direction =-1;
+\end{lstlisting}
+Файл-функция для остановки процесса интегрирования (\alert{isterminal=1}) при пересечении нуля функцией $y(t)$ (\alert{value = q(3)}) при её убывании (\alert{direction = -1}).

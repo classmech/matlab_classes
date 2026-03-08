@@ -1,0 +1,90 @@
+%\documentclass[11pt,compress]{beamer}       
+%\documentclass[notes=only]{beamer}
+%\documentclass[12pt, compress]{beamer} 
+
+\usepackage{beamerthemesplit}
+\usefonttheme[onlymath]{serif}
+\DeclareFontEncoding{T1}
+\fontencoding{T1}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{listings}
+
+\usepackage{amsmath,amssymb,amsthm}
+\hypersetup{unicode=true}
+\usepackage{color}
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\definecolor{codecolor}{RGB}{0,120,0}
+\newcommand{\matcode}[1]{ \textcolor{codecolor}{\texttt{#1}}}
+\usepackage{graphics,graphicx}
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+\usepackage{booktabs}
+%\usepackage{media9}
+
+\usepackage[super]{natbib}
+ 
+\newcommand{\cleartitlepage}[1]{\begin{frame}[plain]\begin{center}\textsc{#1}\end{center}\end{frame}}
+
+\usetheme{CambridgeUS}
+\usecolortheme{lily}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning} 
+\tikzset{cbutton/.style={rectangle,minimum width=10mm,thick,draw=red!50!black!50,
+top color=white,bottom color=red!50!black!30}}
+\tikzset{mbutton/.style={rectangle,minimum width=10mm,thick,draw=black!20,
+top color=white,bottom color=black!30}}
+
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{light-green}{rgb}{0.93, 1, 0.8}
+\definecolor{light-yellow}{rgb}{1,1,0.85}
+
+\lstset{basicstyle=\ttfamily\footnotesize,
+    language=python,    
+    keepspaces=true,
+    extendedchars=true,
+    basicstyle={\footnotesize  \color{black}},
+    breaklines=true,
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{codecolor}},
+    identifierstyle={ \bf \color{black} },
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,
+    numbers=left,%
+    numberstyle={\tiny \color{black}},
+    numbersep=7pt, 
+    emph=[1]{case,switch,otherwise},emphstyle=[1]\color{blue}, 
+    frame=single,    
+    rulecolor=\color{red},    
+    backgroundcolor=\color{light-gray},
+    xleftmargin=0.3cm,
+    frame=l,framesep=4pt,framerule=0.5pt
+    %lineskip=-1.0pt,
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{navigation symbols}{}
+
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}

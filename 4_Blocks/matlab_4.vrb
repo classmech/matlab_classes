@@ -1,0 +1,18 @@
+\frametitle{\emph{Функция} next\_generation.m}
+Функция возвращает матрицу координат клеток следующего поколения для колонии \matcode{colony}:
+\begin{lstlisting}
+function next_gen = next_generation(colony)
+  ...
+\end{lstlisting}
+Пример работы функции
+\begin{lstlisting}
+colony = [1, 1; 2, 1; 3, 1; 3, 2; 2, 3];
+colony = next_generation(colony);
+colony =
+
+   1   2
+   2   0
+   2   1
+   3   1
+   3   2
+\end{lstlisting}

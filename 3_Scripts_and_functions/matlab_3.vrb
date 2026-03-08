@@ -1,0 +1,17 @@
+\frametitle{Функция в качестве аргумента}
+Использование функции \matcode{feval}
+
+Передача имени функции строкой:
+\begin{lstlisting}
+>> x = 1;
+>> feval('sin',x)
+ans =
+    0.8415
+\end{lstlisting}
+
+Передача ссылки на функцию (это работает быстрее):
+\begin{lstlisting}
+>> feval(@sin,x)
+ans =
+    0.8415
+\end{lstlisting}

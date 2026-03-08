@@ -1,0 +1,815 @@
+% -*- program: xelatex -*-
+\documentclass[11pt, compress]{beamer} 
+
+%\usefonttheme[onlymath]{serif}
+\DeclareFontEncoding{T1}
+\fontencoding{T1}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{listings}
+\usepackage{amsmath,amssymb,amsthm}
+\hypersetup{unicode=true}
+\usepackage{color}
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\definecolor{codecolor}{RGB}{0,120,0}
+\newcommand{\matcode}[1]{ \textcolor{codecolor}{\texttt{#1}}}
+\usepackage{graphics,graphicx}
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+\usepackage{booktabs}
+%\usepackage{media9}
+
+ 
+\newcommand{\cleartitlepage}[1]{\begin{frame}[plain]\begin{center}\textsc{#1}\end{center}\end{frame}}
+\usetheme{m} 
+
+\usepackage{tikz}
+\usetikzlibrary{positioning} 
+\tikzset{cbutton/.style={rectangle,minimum width=10mm,thick,draw=red!50!black!50,
+top color=white,bottom color=red!50!black!30}}
+\tikzset{mbutton/.style={rectangle,minimum width=10mm,thick,draw=black!20,
+top color=white,bottom color=black!30}}
+
+\lstset{language=Matlab,    
+    keepspaces=true,
+    extendedchars=true,
+    basicstyle={\footnotesize  \color{black}},
+    breaklines=true,
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{codecolor}},
+    identifierstyle={ \bf \color{black} },
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,
+    numbers=left,%
+    numberstyle={\tiny \color{black}},
+    numbersep=7pt, 
+    emph=[1]{case,switch,otherwise},emphstyle=[1]\color{blue}, 
+    frame=single,    
+    %lineskip=-1.0pt,
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+
+\title{Основы MATLAB}
+\subtitle{Лекция 1}
+\author{Юдинцев В. В.}
+\small
+\institute[СГАУ]
+{
+Кафедра теоретической механики \\
+Самарский государственный аэрокосмический университет \\ им. академика С.~П.~Королёва \\
+(национальный исследовательский университет) \\
+\vfill
+{http://yudintsev.info}
+}
+
+\begin{document}
+
+{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{../matlablogo.png}}
+%\maketitle
+}
+
+\frame{
+\frametitle{Содержание}
+\tableofcontents
+}
+%
+%
+\section{Интерполирование табличных данных}
+%
+%
+\frame{
+\frametitle{Полиномиальная интерполяция}
+\begin{itemize}
+ \item Известны значения некоторой функции $y(x)$ в точках $x_0, x_1, x_2, \ldots, x_n$:
+$$
+  y_0, y_1, y_2, \ldots, y_n.
+$$  
+ \item Необходимо построить интерполирующий многочлен $L_{n}(x)$, совпадающий с значениями табличной функции в точках $x_0, x_1, x_2, \ldots, x_n$ и приближающий функцию $y(x)$ на интервале $[x_0,x_n]$.
+\end{itemize}
+Интерполирующий многочлен в форме Лагранжа:
+$$
+L_{n}=\sum_{i=0}^{n}y_{i}\dfrac{(x-x_{0})(x-x_{1})...(x-x_{i-1})(x-x_{i+1})...(x-x_{n})}{(x_{i}-x_{0})(x_{i}-x_{1})...(x_{i}-x_{i-1})(x_{i}-x_{i+1})...(x_{i}-x_{n})}
+$$
+}
+
+\frame[containsverbatim]
+{
+\frametitle{Полиномиальная интерполяция: функция polyfit}
+Исходные данные
+\begin{lstlisting}
+x = [0.1 0.2 0.3 0.4];
+y = [0.2 0.6 0.5 0.3];
+\end{lstlisting}
+Вычисление коэффициентов интерполирующего многочлена $\tilde{y} = p_n x^{n} + p_{n-1} x^{n-1} + \ldots + p_0 $ для $n = 3$ 
+\begin{lstlisting}[firstnumber=last]
+p = polyfit(x,y,3)
+ans =
+    66.6667  -65.0000   18.8333   -1.1000
+\end{lstlisting}
+Первый элемент -- $p_n$, последний -- $p_0$.
+}
+
+\frame[containsverbatim]
+{
+\frametitle{Полиномиальная интерполяция}
+\begin{center}
+ \includegraphics[width=0.85\linewidth]{./PolyInterpolation.png}
+ % PolyInterpolation.png: 1573x847 pixel, 300dpi, 13.32x7.17 cm, bb=0 0 378 203
+\end{center}
+}
+
+\frame[containsverbatim]
+{
+\frametitle{Полиномиальная интерполяция}
+\begin{center}
+ \includegraphics[width=0.85\linewidth]{./PolyInterpolation2.png}
+ % PolyInterpolation.png: 1573x847 pixel, 300dpi, 13.32x7.17 cm, bb=0 0 378 203
+\end{center}
+}
+
+\frame[containsverbatim]
+{
+\frametitle{Полиномиальная интерполяция}
+\begin{itemize}
+ \item Полиномиальная интерполяция используется локально. 
+\begin{center}
+ \includegraphics[width=0.7\linewidth]{./PolyInterpolationBad.png}
+ % PolyInterpolation.png: 1573x847 pixel, 300dpi, 13.32x7.17 cm, bb=0 0 378 203
+\end{center}
+ \item Для глобальной интерполяции используется сплайн-интерполяция -- глобальная "`кусочно-полиномиальная"' интерполяция. 
+\end{itemize}
+}
+
+\frame[containsverbatim]
+{
+\frametitle{Вычисление значения интерполирующей функции}
+Значения многочлена в точке $x=0.15$:
+\begin{lstlisting}[firstnumber=last]
+>> polyval(p,0.15)
+ans = 
+      0.48750
+\end{lstlisting}      
+}
+
+\frame[containsverbatim]
+{
+\frametitle{Построение графика}
+\begin{lstlisting}[firstnumber=last]
+>> fplot(@(x) polyval(p,x),[0.1 0.4]);
+>> grid on;
+>> xlabel('x');ylabel('y');
+>> print('-dpng', '-r600', 'function.png');
+\end{lstlisting}      
+\begin{center}
+ \includegraphics[width=0.6\linewidth]{./function.png}
+\end{center}
+}
+
+\frame[containsverbatim]
+{
+\frametitle{Сплайн-интерполяция}
+Для числа или вектора/матрицы \matcode{xp}:
+линейная интерполяция 
+\begin{lstlisting}
+yp = interp1(x,y,xp)
+\end{lstlisting}
+поиск ближайшего табличного значения 
+\begin{lstlisting}
+yp = interp1(x,y,xp,'nearest')
+\end{lstlisting}
+сплайн-интерполяция (полином 3 степени) 
+\begin{lstlisting}
+yp = interp1(x,y,xp,'spline')
+\end{lstlisting}
+}
+%
+%
+\subsection{Численное дифференцирование}
+%
+%
+\frame[containsverbatim]
+{
+\frametitle{Конечные разности}
+\begin{itemize}
+ \item \matcode{x = [0.1 0.21 0.32 0.41];}\\
+ \item Конечная разности 1-го порядка \\
+ \matcode{dx = diff(x)} \\
+ \matcode{> 0.110000   0.110000   0.090000 }
+ \item Конечная разности 2-го порядка \\
+ \matcode{dx = diff(x,2)} \\
+ \matcode{> 2.7756e-17  -2.0000e-02}   \\
+\end{itemize}
+}
+%
+%
+\section{Численное интегрирование}
+%
+%
+\frame[containsverbatim]
+{
+\frametitle{Метод трапеций}
+\begin{lstlisting}
+>> x = [0.1 0.21 0.32 0.41];
+>> y = sin(x)+x;
+\end{lstlisting} 
+Метод трапеций
+\begin{lstlisting}
+>> trapz(x,y)
+ans = 
+    000
+\end{lstlisting} 
+}
+
+\frame[containsverbatim]
+{
+\frametitle{Метод Симпсона}
+\begin{itemize}
+  \item \matcode{x = [0.1 0.21 0.32 0.41];}\\
+  \item \matcode{y = sin(x)+x;}
+  \item Метод Симпсона \\
+  \matcode{integral = quad(@function,a,b,eps);} \\
+  \matcode{a,b} -- пределы интегрирования \\
+  \matcode{eps} -- точность (по умолчанию $10^{-6}$)\\
+  \matcode{@function} -- ссылка на функцию или строка-выражение, например,\matcode{'sin(x)+x'}.
+\end{itemize}
+}
+%
+%
+%
+\section{Интегрирование ОДУ}
+%
+%
+%
+\begin{frame}{Структура}
+$$
+\left\{
+\begin{aligned}
+& \frac{d q_1}{dt} = f_1(t,q_1,q_2,\ldots,q_n),  \\
+& \frac{d q_2}{dt} = f_2(t,q_1,q_2,\ldots,q_n),  \\
+& \ldots \\
+& \frac{d q_n}{dt} = f_n(t,q_1,q_2,\ldots,q_n).  
+\end{aligned}
+\right. 
+\quad \Rightarrow \quad
+\frac{d \boldsymbol q}{dt} = \boldsymbol f(t,\boldsymbol q)
+$$
+где 
+\begin{itemize}
+	\item $\boldsymbol q = (q_1,q_2,\ldots,q_n)$ -- вектор состояния;
+	\item $\boldsymbol f(t,\boldsymbol q)$ -- вектор-функция правых частей.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Структура}
+\begin{itemize}
+	\item Приведение к системе дифференциальных уравнений первого порядка.
+	\item Файл-функция правой части $\boldsymbol f(t,\boldsymbol q)$.
+	\item Файл-скрипт запуска процесса интегрирвования ДУ.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Пример: задача баллистики}
+	рисунок
+\end{frame}
+
+\frame
+{
+\frametitle{Дифференциальные уравнения движения}
+Приведение к системе дифференциальных уравнений первого порядка.
+$$
+m \vec a = m \vec g
+\quad \Rightarrow \quad
+\left\{
+\begin{aligned}
+& m \frac{d^{\,2} x}{dt^2} = 0,  \\
+& m \frac{d^{\,2} y}{dt^2} = - m g.
+\end{aligned}
+\right. 
+\quad \Rightarrow \quad
+   \left\{
+   \begin{aligned}
+   & \frac{dx}{dt} = V_x,  \\
+   & \frac{dy}{dt} = V_y,  \\
+   & \frac{dV_x}{dt} = 0, \\
+   & \frac{dV_y}{dt} = - g.
+   \end{aligned}
+   \right.
+$$
+}
+
+
+\frame[containsverbatim]
+{
+\frametitle{ODE файл}
+Файл в котором вычисляется правая часть дифференциального уравнения или системы уравнений:
+$$
+  \mathbf q \Rightarrow \boxed{ \dot{\mathbf q} = \mathbf f(\mathbf q,t) }  \Rightarrow  \dot {\mathbf q}
+$$
+где $\mathbf x$ -- вектор зависимых переменных, $t$ -- время.
+
+\begin{lstlisting}
+function dq = dqdt(t,q)
+	g = 9.81;
+	m = 1.00;
+	x=q(1); Vx=q(2); y=q(3); Vy=q(4);
+	dq = [ Vx ; 0 ; Vy ; -m*g ];
+\end{lstlisting}
+}
+
+\frame[containsverbatim]
+{
+\frametitle{Интегрирование}
+\begin{lstlisting}
+% Начальные условия
+q0 = [0, 10*cos(pi/4), 0, 10*sin(pi/4)];
+% Интервал интегрирования
+tspan = [0 5];
+[t, q] = ode45( @dqdt, tspan , q0 );
+\end{lstlisting}
+}
+
+\frame[containsverbatim]
+{
+\frametitle{Методы интегрирования}
+\begin{table}[h]
+\center
+\begin{tabular}{@{}lp{0.8\linewidth}@{}}
+\toprule
+Интегратор & Описание \\
+ \cmidrule{1-2}
+ \matcode{ode45} & Метод Рунге-Кутты 4 и 5 порядков с автоматическим выбором шага  \\
+ \matcode{ode23} & Метод Рунге-Кутты 2 и 3 порядков с автоматическим выбором шага  \\
+ \matcode{ode113} & Многошаговый метод Адамса: метод с предсказанием и коррекцией \\
+ \matcode{ode15s} & Многошаговый метод для интегрирования жестких систем \\
+ \matcode{ode23s} & Одношаговый метод Розенброка второго порядка для жестких систем \\
+\bottomrule
+\end{tabular}
+\end{table}
+}
+
+\frame[containsverbatim]
+{
+\frametitle{Результаты интегрирования}
+\begin{Verbatim}[formatcom=\color{codecolor}]
+[t, q] = ode45( @dqdt, tspan , q0 );
+\end{Verbatim}
+\vspace{16pt}
+\begin{columns}
+\column{.5\textwidth}
+  \matcode{t} -- столбец независимой переменной (время) \\
+  $$ t = \begin{bmatrix} t_0 \\ t_1 \\ \ldots \\ t_k \end{bmatrix}$$
+\column{.5\textwidth}
+  \matcode{q} -- матрица зависимых переменных
+  $$ q = \begin{bmatrix} x_0 & V_{x0} & y_0 & V_{y0} \\  x_1 & V_{x1} & y_1 & V_{y1} \\ \ldots \\ x_k & V_{xk} & y_k & V_{yk} \end{bmatrix}$$
+\end{columns}
+}
+
+\subsection{Управление процессом интегрирования}
+
+\frame[containsverbatim]
+{
+\frametitle{Управление процессом интегрирования}
+Расширенная версия запуска интегрирования д.у.:
+\begin{Verbatim}[formatcom=\color{codecolor}]
+[t, q] = ode45( @dqdt, tspan , q0, options );
+\end{Verbatim}
+\vspace{16pt}
+До запуска интегрирования устанавливается переменная \matcode{options} : \\
+\matcode{options = odeset('Парам. 1',Значение,'Парам. 2',...)}
+}
+
+\frame[containsverbatim]
+{
+\frametitle{Точность решения}
+\begin{itemize}
+  \item \matcode{'RelTol'}: относительная погрешность. \textbf{Число} - значение погрешности для всех переменных, или \textbf{вектор}, задающий погрешность для каждой переменной (по умолчанию $10^{-3}$)
+  \item \matcode{'AbsTol'}: абсолютная погрешность. Число или вектор (по умолчанию $10^{-6}$)
+\end{itemize}
+\vfill
+\begin{lstlisting}
+options = odeset('RelTol',1e-4,'AbsTol',1e-8);
+[t, q] = ode45( @dqdt, tspan , q0, options );
+\end{lstlisting}
+}
+
+\frame[containsverbatim]
+{
+\frametitle{Параметры интегрирования}
+\begin{itemize} 
+  \item \matcode{'InitialStep'}: начальный шаг интегрирования;
+  \item \matcode{'Mass'}: матрица коэффициентов $\mathbf M$ в дифференциальных уравнениях, записанных в виде 
+$$
+\mathbf M(\mathbf q,t) \dot{\mathbf q} = \mathbf f(t,\mathbf q). 
+$$
+Имя переменной, если матрица масс постоянная, или ссылка на m-файл. Для всех интеграторов кроме \matcode{ode15s, ode23t} матрица масс должна быть невырожденная;
+ \item \matcode{'MassSingular'}: может ли матрица масс быть вырожденной. Возможные значения: \matcode{'yes'}, \matcode{'no'}, \matcode{'maybe'} (по умолчанию \matcode{'maybe'}).
+\end{itemize}
+}
+
+\section{Отслеживание событий}
+
+\frame[containsverbatim]
+{
+\frametitle{События: параметр 'Events'}
+\matcode{options = odeset('Events',@events);} \\
+Файл-функция событий:
+\begin{lstlisting}
+function [ value, isterminal, direction ] = events(t, q)
+ % Следим за изменением переменной y
+ value = q(3); 
+ % Остановить процесс, 
+ isterminal= 1;
+ % если q(3) станет равна нулю и будет убывать
+ direction =-1;
+\end{lstlisting}
+Прохождение через ноль при возрастании функции: \matcode{direction = 1}\\
+Прохождение через ноль при любом пересечении: \matcode{direction = 0}
+}
+
+\frame[containsverbatim]
+{
+\frametitle{Падения шарика на абсолютно упругую поверхность}
+Файл-скрипт запуска интегрирования: \\
+\matcode{options = odeset('Events',@events);}\\
+\matcode{v0 = 1; q01 = [0,v0*cos(pi/4),0,v0*sin(pi/4)];}\\
+Процесс интегрирования прекращается при достижении t=20 или, когда q(3) станет равна нулю, двигаясь из области положительных значений\\
+\matcode{[t1,q1] = ode45(@dqdt,[0 20],q01);}\\
+Запускаем процесс интегрирования с новыми начальными условиями\\
+\matcode{n1 = length(t1);}\\
+\matcode{t0 = t(n1); tk=t0+20;} интегрируем от $t_{1k}$ до $t_{1k}+20$\\
+\matcode{q02 = q1(n1,:); q02(4)=-q02(4);} меняем знак скорости $V_y$
+\matcode{[t2,q2] = ode45(@dqdt,[t0 tk],q02);} \\
+\matcode{t=[t1;t2]; q=[q1;q2];}
+}
+
+\section{Орбитальное движение}
+
+\begin{frame}[fragile]{Геоцентрическая инерциальная система координат $OXYZ$}
+123
+\end{frame}
+
+\begin{frame}[fragile]{Движение материальной точки в центральном поле}
+\begin{columns}
+\column{0.4\linewidth}
+123
+\column{0.6\linewidth}
+Векторная запись:
+$$
+  m \vec a = \vec F
+$$
+Координатная запись:
+$$
+\begin{aligned}
+  & m a_x = F_x, \\
+  & m a_y = F_y, \\
+  & m a_z = F_z.
+\end{aligned}
+$$
+Модуль силы притяжения Земли, действующей на спутник:
+$$
+  F = G \frac{M m}{r^2} = \mu \frac{m}{r^2} 
+$$ 
+\end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]{Проекции силы на оси $OXYZ$}
+\begin{columns}
+\column{0.4\linewidth}
+123
+\column{0.6\linewidth}
+Векторная запись:
+$$
+  m \vec a = \vec F
+$$
+Координатная запись:
+$$
+\begin{aligned}
+  & m a_x = F_x, \\
+  & m a_y = F_y, \\
+  & m a_z = F_z.
+\end{aligned}
+$$
+Модуль силы притяжения Земли, действующей на спутник:
+$$
+  F = G \frac{M m}{r^2} = \mu \frac{m}{r^2} 
+$$ 
+\end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]{Элементы орбиты}
+\begin{columns}
+\column{0.6\linewidth}
+Рисунок
+\column{0.4\linewidth}
+\begin{itemize}
+  \item $a$ -- большая полуось,
+  \item $i$ -- наклонение,
+  \item $e$ -- эксцентриситет,
+  \item $\Omega$ -- долгота восходящего узла,
+  \item $\omega$ -- аргумент перицентра,
+  \item $\theta$ -- угол истинной аномалии,  
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Приведение к ОДУ первого порядка}
+$$
+\left\{
+\begin{aligned}
+  & m a_x = F_x, \\
+  & m a_y = F_y, \\
+  & m a_z = F_z.
+\end{aligned}\right. \quad \Rightarrow \quad
+\left\{
+\begin{aligned}
+  & \dot v_x = F_x/m, \\
+  & \dot v_y = F_y/m, \\
+  & \dot v_z = F_z/m, \\
+  & \dot x = v_x, \\
+  & \dot y = v_y, \\
+  & \dot z = v_z 
+\end{aligned}
+\right.
+$$
+Неизвестные функции: 
+$$
+  v_x, v_y, v_z, x, y, z
+$$
+\end{frame}
+
+\begin{frame}[fragile]{Файл-функция правой части}
+$$
+  q = (v_x, v_y, v_z, x, y, z)
+$$
+\matcode{Файл dqdt.m}
+\begin{lstlisting}
+function dq = dqdt(t, q, ) 
+  global params;
+  r = q(1:3);
+  v = q(4:6);
+  % Вектор ускорения
+  a = params.mu/dot(r,r);
+  % Возвращаем производную вектора q
+  dq = [v,a];
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Главный файл-скрипт}
+\matcode{Файл orbitalMotion.m}
+\begin{lstlisting}
+  % Гравитационный параметр Земли
+  params.mu=;
+  % Радиус Земли
+  Rz = 6371000;    
+  % Формируем вектор начальных условий  
+  % для круговой орбиты 
+  e  = 0;  
+  % высотой
+  h  = 300000;
+  V = sqrt(mu/(Rz+h));
+  q0 = [h+Rz;0;0;0;V;0];
+  % Вызываем функцию интегрирования
+  [t,q] = ode45(@dqdt, q0, [0 tk]);  
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Результат интегрирования}
+Матрица $q$ содержит 6 столбцов и число строк равное числу шагов интегрирования, соотеветсвующие моментам времени, содержащимся в столбце $t$:
+$$
+  t = \begin{bmatrix} 0 \\ t_1 \\ t_2 \\ \ldots \\ t_n \end{bmatrix}, \quad
+  q = 
+\begin{bmatrix} 
+  v_{x0} & v_{y0} & v_{z0} & x_{0} & y_{0} & z_{0} \\
+  v_{x1} & v_{y1} & v_{z1} & x_{1} & y_{1} & z_{1} \\
+  v_{x2} & v_{y2} & v_{z2} & x_{2} & y_{2} & z_{2} \\
+  \ldots & \ldots & \ldots & \ldots & \ldots & \ldots \\
+  v_{xn} & v_{yn} & v_{zn} & x_{n} & y_{n} & z_{n} 
+\end{bmatrix}.
+$$
+\end{frame}
+
+\begin{frame}[fragile]{Экспорт результатов в текстовый файл}
+Для обработки результатов в других программах возможна запись таблицы с результатами в текстовый файл, в котором значения в каждой строке разделяются запятой:
+\begin{lstlisting}  
+  dlmwrite('results.csv',[t, q], ',');
+\end{lstlisting}
+$$
+\begin{bmatrix} 
+  t_0, & v_{x0}, & v_{y0}, & v_{z0}, & x_{0}, & y_{0}, & z_{0}, \\
+  t_1, & v_{x1}, & v_{y1}, & v_{z1}, & x_{1}, & y_{1}, & z_{1}, \\
+  t_2, & v_{x2}, & v_{y2}, & v_{z2}, & x_{2}, & y_{2}, & z_{2}, \\
+  \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots \\
+  t_n, & v_{xn}, & v_{yn}, & v_{zn}, & x_{n}, & y_{n}, & z_{n} 
+\end{bmatrix}.
+$$
+\end{frame}
+
+
+\begin{frame}[fragile]{Построение графиков}
+\matcode{Файл orbitalMotion.m}
+\begin{lstlisting}
+  plot(t, (sqrt(sum(q(4:6,:).*q(4:6,:),2))-Rz)*0.001);
+  xlabel('t, c');
+  ylabel('r, км');
+\end{lstlisting}
+
+\end{frame}
+
+\section{Относительное орбитальное движение}
+
+\frame{
+\frametitle{Направление осей системы координат $Ox_0y_0z_0$}
+\begin{center}
+ \includegraphics[width=1\linewidth]{./Orbital_SC.pdf}
+\end{center}
+}
+
+\frame
+{
+\frametitle{Движения орбитальной ступени}
+\begin{itemize}
+ \item При движении по круговой орбите с постоянной угловой скоростью
+\begin{equation}\label{eq:aok}
+a_o = \omega_o^2 r_o
+\end{equation}
+ \item Подставляя \eqref{eq:aok} в \eqref{eq:aog}, получим угловую скорость орбитального движения
+\begin{equation}\label{eq:mu}
+ \boxed{\omega_o^2 = \frac{\mu}{r_o^3}}
+\end{equation}
+\item Орбитальная скорость
+\begin{equation}\label{eq:vo}
+ \boxed{V_o = \omega_o r_o =\sqrt{\frac{\mu}{r_o}}}
+\end{equation}
+\end{itemize}
+}
+
+\begin{frame}[fragile]{Уравнения относительного орбитального движения}
+Приближенные уравнения относительного движения*:
+\begin{align*}
+  & x = \frac{u_{0x}}{\omega_o} \sin \omega_o t - \frac{2 u_{0y}}{\omega_o} \cos \omega_o t + \frac{2 u_{0y}}{\omega_o}, \\
+  & y = 2 \, \frac{u_{0x}}{\omega_o} \left( \cos \omega_o t - 1 \right) + 4 \, \frac{u_{0y}}{\omega_o} \sin \omega_o t - 3 \, u_{0y} t , \\
+  & z =  \frac{u_{0z}}{\omega_o} \sin \omega_o t.
+\end{align*}
+Допущения:
+\begin{itemize}
+  \item орбита носителя круговая;
+  \item расстояние между носителем и КА мало по сравнению с расстоянием от носителя до центра Земли;
+\end{itemize}
+{\scriptsize *Вывод уравнений приведён в \href{http://1}{http://2}}
+\end{frame}
+
+\frame{
+\frametitle{Отделение вдоль вектора орбитальной скорости}
+\begin{columns}
+\column{0.5\linewidth}
+$u_{0x}=u_{0z}=0$, $u_{0y}=1$ м/с, $H=300$ км
+\begin{center}
+ \includegraphics[width=0.35\linewidth]{./sepVy.pdf}
+\end{center}
+\begin{align*}
+  & x(t) = \frac{2 u_{0y}}{\omega_o} (1 - \cos \omega_o t), \\
+  & y(t) = 4 \, \frac{u_{0y}}{\omega_o} \sin \omega_o t - 3 \, u_{0y} t , \\
+  & z(t) = 0
+\end{align*}
+\column{0.5\linewidth}
+\begin{center}
+ \includegraphics[width=0.8\linewidth]{./xyVy.pdf}
+\end{center}
+\end{columns}
+}
+
+\frame{
+\frametitle{Отделение вдоль радиус-вектора}
+\begin{columns}
+\column{0.5\linewidth}
+$u_{0y}=u_{0z}=0$, $u_{0x}=1$ м/с, $H=300$ км
+\begin{center}
+ \includegraphics[width=0.5\linewidth]{./sepVx.pdf}
+ \end{center}
+\begin{align*}
+  & x(t) = \frac{u_{0x}}{\omega_o} \sin \omega_o t, \\
+  & y(t) = 2 \, \frac{u_{0x}}{\omega_o} \left( \cos \omega_o t - 1 \right), \\
+  & z(t) =  0
+\end{align*}
+\column{0.5\linewidth}
+\begin{center}
+ \includegraphics[width=0.65\linewidth]{./xyVx.pdf}
+ % xyVx.pdf: 183x368 pixel, 72dpi, 6.46x12.98 cm, bb=0 0 183 368
+\end{center}
+\end{columns}
+}
+
+\frame{
+\frametitle{Отделение по нормали к орбите}
+$u_{0x}=u_{0y}=0$, $u_{0z}=1$ м/с
+\begin{align*}
+  & x(t) = 0, \\
+  & y(t) = 0, \\
+  & z(t) =  \frac{u_{0z}}{\omega_o} \sin \omega_o t
+\end{align*}
+}
+
+\frame{
+\frametitle{Выводы}
+\begin{itemize}
+ \item При отделении КА вдоль нормали к плоскости орбиты происходит опасное сближение КА и орбитальной ступени через половину орбитального периода.
+ \item При отделении КА вдоль радиус-вектора орбитальной ступени происходит опасное сближение КА и орбитальной ступени через орбитальный период.
+ \item Для безопасного отделения КА от орбитальной ступени, вектор приращения скорости КА относительно орбитальной ступени должен иметь проекцию на направление орбитальной скорости.
+\end{itemize}
+}
+
+%
+%
+%
+\section{Пересчёт координат из геоцентрической СК в орбитальную подвижную}
+%
+%
+%
+\begin{frame}[fragile]{Направления осей $Cx_oy_oz_o$}
+\begin{columns} 
+\column{0.5\linewidth} 
+\begin{center}
+ \includegraphics[width=1.1\linewidth]{./orbitalCoordinatesOnly.png} 
+\end{center}
+\column{0.5\linewidth} 
+Единичный вектор радиус-вектора носителя:
+$$
+\vec e_{ox} = \vec r / r.
+$$
+Единичный вектор нормали к орбите:
+$$
+\vec e_{oz} = (\vec r \times \vec v) / | \vec r \times \vec v |.
+$$
+Единичный вектор трансверсали:
+$$
+\vec e_{oy} = (\vec e_{oz} \times \vec e_{ox})/| \vec e_{oz} \times \vec e_{ox} |.
+$$
+\end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]{Положение КА относительно носителя}
+\begin{columns} 
+\column{0.5\linewidth} 
+\begin{center}
+ \includegraphics[width=1.1\linewidth]{./orbitalCoordinates.png} 
+\end{center}
+\column{0.5\linewidth} 
+Радиус-вектор положения КА относительно носителя:
+$$
+\Delta \vec r = \vec r - \vec r_o
+$$
+Координаты КА относительно носителя в $Cx_oy_oz_o$:
+$$
+\begin{aligned}
+  & \Delta x = \Delta \vec r \cdot \vec e_{ox}=\Delta r \cos \alpha_x, \\
+  & \Delta y = \Delta \vec r \cdot \vec e_{oy}=\Delta r \cos \alpha_y, \\
+  & \Delta z = \Delta \vec r \cdot \vec e_{oz}=\Delta r \cos \alpha_z.
+\end{aligned}
+$$
+\end{columns}
+\end{frame}
+
+\section{Задание}
+
+\begin{frame}[fragile]{Групповое отделение КА}
+  \begin{center}
+    \includegraphics[width=0.9\linewidth]{./3KA.pdf} 
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Групповое отделение КА}
+\begin{enumerate}
+ \item От носителя (орбитальной ступени) одновременно отделяется три малых космических аппарата.
+ \item Векторы приращений скоростей малых КА относительно орбитальной ступени лежат в плоскости орбиты.
+ \item Используя уравнения относительного орбитального движения, определите наилучший угол отделения КА. 
+\end{enumerate} 
+\end{frame}
+
+\begin{frame}[fragile]{Групповое отделение КА}
+\begin{enumerate} 
+ \item[4.] Постройте траектории движения КА относительно носителя (на одном рисунке).
+ \item[5.] Постройте графики изменения расстояний между КА и носителем и между каждой парой КА (на одном рисунке).
+ \item[6.] Определите минимальное расстояние между КА и носителем и между каждой парой КА через один орбитальный период носителя. 
+ \item[7.] Сравните полученные результаты с результатами интегрирования уравнений движения материальной точки в центральном поле.
+\end{enumerate} 
+\end{frame}
+
+\plain{
+\scriptsize 
+Vadim Yudintsev\\
+Computational Mechanics with MATLAB\\
+Lecture 3: Orbital motion \\
+\vspace{10pt}
+LaTeX Beamer theme METROPOLIS by Matthias Vogelgesang \href{http://github.com}{http://github.com}
+}
+  
+  
+\end{document}

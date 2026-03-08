@@ -1,0 +1,180 @@
+
+
+%% 
+x=0:0.1:5;
+y1=sin(x);
+y2=cos(x);
+plot(x,y1,x,y2,'LineWidth',3);
+
+set(gca,'FontSize',14)
+
+<<<<<<< HEAD
+set(gcf,'PaperUnits','inches');
+=======
+set(gcf,'PaperUnits','inches');      
+>>>>>>> 60f39d46fa1462a9103548e3d191c34440aa3daf
+set(gcf,'PaperPosition', [0 0 7 5]);
+
+print('../plot2','-dpng','-r200');
+
+%%
+figure('Color','white');
+x = 0:0.1:5;
+h = plot(x,sin(x))
+set(gca,'FontSize',16)
+print('../plot_figure','-dpng','-r200');
+%%
+figure('Color','white');
+x = 0:0.1:5;
+h = plot(x,sin(x),x,cos(x));
+set(gca,'FontSize',14)
+set(h,{'LineWidth'},{2;4});
+print('../plot_width_multiple','-dpng','-r200');
+%%
+figure('Color','white');
+x = 0:0.1:5;
+ph = plot(x,sin(x));
+set(ph,'LineWidth',2);
+set(gca,'FontSize',14);
+
+figure('Color','white');
+x = 0:0.1:5;
+ph = plot(x,sin(x),'LineWidth',2);
+set(ph,'LineWidth',2);
+set(gca,'FontSize',14);
+
+
+print('../plot_width','-dpng','-r200');
+
+%%
+x=1:0.2:3;
+y=sin(x);
+bar(y,0.95);
+set(gca,'FontSize',19)
+print('../bar_width','-dpng','-r200');
+
+%%
+y = [2 2 3; 
+     2 5 6; 
+     2 8 9; 
+     2 11 12];
+bar(y);
+set(gca,'FontSize',19);
+print('../bar_group','-dpng','-r200');
+%%
+y = [2 2 3; 
+     2 5 6; 
+     2 8 9; 
+     2 11 12]; 
+bar(y,'stacked')
+set(gca,'FontSize',19);
+print('../bar_sum','-dpng','-r200');
+
+%%
+c = categorical({'apples','pears','oranges'});
+prices = [1.23 0.99 2.3];
+bar(c,prices)
+set(gca,'FontSize',19);
+print('../bar_categorical','-dpng','-r200');
+
+%%
+y = [75 91 105 123.5];
+bar(y,'r')
+set(gca,'FontSize',19);
+print('../bar_color','-dpng','-r200');
+%%
+y = [75 91 105 123.5];
+bar(y,'FaceColor',[0.8 0.6 0.6],...
+      'EdgeColor',[0.5 0.1 0.1],...
+      'LineWidth',3);
+set(gca,'FontSize',19);
+print('../bar_color2','-dpng','-r200');
+%%
+y = [75 91 105 123.5];
+b = bar(y);
+b.FaceColor = 'flat';
+b.CData(2,:) = [1 0 0];
+set(gca,'FontSize',19);
+print('../bar_color3','-dpng','-r200');
+%%
+X = 1:3;
+labels = {'Taxes','Expenses','Profit'};
+hp = pie(X,labels);
+%set(findobj(hp,'type','text'),'FontSize',24);
+set(hp(2:2:6),'FontSize',18);
+print('../pie_text','-dpng','-r200');
+%%
+[x, y] = meshgrid(0:0.1:0.4,0:0.2:0.4);
+x
+y
+%%
+[X, Y] = meshgrid(-1:0.1:1,-1:0.1:1);
+Z=-X.^2-Y;
+contourf(X,Y,Z,12);
+colorbar;
+colormap(gray); 
+set(gca,'FontSize',19);
+title('z=x^2+y^2'); 
+print('../contourf_gray','-dpng','-r200');
+%%
+Y = [1, 5, 3];
+area(Y);
+set(gca,'FontSize',24);
+print('../area','-dpng','-r200');
+%%
+Y = [1, 5, 3;
+     3, 2, 7;
+     1, 5, 3;
+     2, 6, 1];
+area(Y);
+set(gca,'FontSize',24);
+print('../area2','-dpng','-r200');
+%%
+x = 0:10:40;
+y = [20 30 45 40 60];
+err = [1 3 5 3 5];
+errorbar(x,y,err,'LineWidth',2);
+set(gca,'FontSize',24);
+print('../error','-dpng','-r200');
+%%
+x = 0:10:40;
+y = [20 30 45 40 60];
+err = [1 3 5 3 5];
+errorbar(x,y,err,'horizontal','LineWidth',2);
+set(gca,'FontSize',24);
+print('../error2','-dpng','-r200');
+%%
+x = 1:10:100;
+y = [20 30 45 40 60 65 80 75 95 90];
+yneg = [1 3 5 3 5 3 6 4 3 3];
+ypos = [2 5 3 5 2 5 2 2 5 5];
+xneg = [1 3 5 3 5 3 6 4 3 3];
+xpos = [2 5 3 5 2 5 2 2 5 5];
+errorbar(x,y,yneg,ypos,xneg,xpos,'o:','LineWidth',2)
+set(gca,'FontSize',24);
+print('../error3','-dpng','-r200');
+%%
+x = linspace(0,10,15);
+y = sin(x/2);
+err = 0.3*ones(size(y));
+errorbar(x,y,err,'-s',...
+    'MarkerSize',10,...
+    'MarkerEdgeColor','red',...
+    'MarkerFaceColor','red')
+set(gca,'FontSize',24);
+print('../error4','-dpng','-r200');
+print('../error4','-dpdf');
+%%
+t=0:0.01:10;
+x=t-sin(t);
+y=1-cos(t);
+comet(x,y);
+%%
+figure('PaperUnits','Centimeters','PaperSize',[16,10]);
+
+t=0:0.01:10;
+x=cos(t);
+y=sin(t);
+z=t;
+plot3(x,y,z);
+print('../comet3','-dpdf','-fillpage');

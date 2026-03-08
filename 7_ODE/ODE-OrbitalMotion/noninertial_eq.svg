@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="noninertial_eq.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.0182899"
+     inkscape:cx="200.4172"
+     inkscape:cy="243.02753"
+     inkscape:window-width="2400"
+     inkscape:window-height="1297"
+     inkscape:window-x="0"
+     inkscape:window-y="29"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect26899"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect26889"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect26883"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible;"
+       id="marker26747"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.2) rotate(180) translate(6,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path26745" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect26663"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect26626"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect26616"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect23728"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect22896"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect22756"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Send"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.2) rotate(180) translate(6,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1283" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker22656"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path22654" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect22572"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible;"
+       id="marker1539"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1537" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker1529"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1277" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1167"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1081"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1077"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1007"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1001"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect995"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect909"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker10386"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#3a7c0e;fill-opacity:1;fill-rule:evenodd;stroke:#3a7c0e;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path10388"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path10097"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#bc2122;fill-opacity:1;fill-rule:evenodd;stroke:#bc2122;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker10364"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#3d4970;fill-opacity:1;fill-rule:evenodd;stroke:#3d4970;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path10366"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#3d4970;stroke-width:0.202514;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker10364)"
+       d="m 31.008166,40.500835 0,-20.908708"
+       id="path10074"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#bc2122;stroke-width:0.202514;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="M 31.085636,40.397153 14.436361,53.979786"
+       id="path10076"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#3a7c0e;stroke-width:0.202514;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker10386)"
+       d="m 31.008166,40.500835 41.572735,9.850003"
+       id="path10078"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#3d4970;stroke-width:0.193114;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker10364)"
+       d="M 32.129978,91.989555 18.451962,64.085735"
+       id="path868"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#bc2122;stroke-width:0.193114;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="M 32.152795,91.868268 23.597777,110.4864"
+       id="path870"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#3a7c0e;stroke-width:0.193114;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker10386)"
+       d="M 32.129978,91.989555 71.860797,82.974734"
+       id="path872"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 19.929775,49.407302 1.668539,2.873597"
+       id="path907"
+       inkscape:path-effect="#path-effect909"
+       inkscape:original-d="m 19.929775,49.407302 c 0.556444,0.95813 1.112624,1.915996 1.668539,2.873597"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 21.505618,48.22542 1.668539,2.873597"
+       id="path991"
+       inkscape:path-effect="#path-effect995"
+       inkscape:original-d="m 21.505618,48.22542 c 0.556444,0.95813 1.112624,1.915996 1.668539,2.873597"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 22.919242,47.020364 1.668539,2.873597"
+       id="path997"
+       inkscape:path-effect="#path-effect1001"
+       inkscape:original-d="m 22.919242,47.020364 c 0.556444,0.95813 1.112624,1.915996 1.668539,2.873597"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 24.332866,45.861656 1.668539,2.873597"
+       id="path1003"
+       inkscape:path-effect="#path-effect1007"
+       inkscape:original-d="m 24.332866,45.861656 c 0.556444,0.95813 1.112624,1.915996 1.668539,2.873597"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;stroke:#69b628;stroke-width:0.252302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1539)"
+       d="M 32.129978,91.989555 34.513241,65.218579"
+       id="path1075"
+       inkscape:path-effect="#path-effect1077"
+       inkscape:original-d="M 32.129978,91.989555 C 32.924651,83.066149 33.719072,74.14249 34.513241,65.218579"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;stroke:#69b628;stroke-width:0.252302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1539)"
+       d="m 32.152794,91.868268 7.70555,-19.976327"
+       id="path1079"
+       inkscape:path-effect="#path-effect1081"
+       inkscape:original-d="m 32.152794,91.868268 c 4.175511,-4.433801 3.530544,-15.542019 7.70555,-19.976327"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;stroke:#69b628;stroke-width:0.252302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1529)"
+       d="M 32.129978,91.989555 55.285869,109.32727"
+       id="path1163"
+       inkscape:path-effect="#path-effect1167"
+       inkscape:original-d="M 32.129978,91.989555 C 32.924651,83.066149 54.4917,118.25118 55.285869,109.32727"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.63581px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.115896"
+       x="21.719589"
+       y="114.40007"
+       id="text8437"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan8435"
+         style="stroke-width:0.115896"
+         x="21.719589"
+         y="114.40007">x</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.63581px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.115896"
+       x="72.988197"
+       y="84.080887"
+       id="text8521"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan8519"
+         style="stroke-width:0.115896"
+         x="72.988197"
+         y="84.080887">y</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.63581px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.115896"
+       x="15.885577"
+       y="62.866287"
+       id="text8773"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan8771"
+         style="stroke-width:0.115896"
+         x="15.885577"
+         y="62.866287">z</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.40565px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160141"
+       x="55.716942"
+       y="107.34774"
+       id="text11643"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan11641"
+         style="stroke-width:0.160141"
+         x="55.716942"
+         y="107.34774"><tspan
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'PT Sans';-inkscape-font-specification:'PT Sans Italic';stroke-width:0.160141"
+           id="tspan15661">a</tspan><tspan
+           style="font-size:4.16367px;baseline-shift:sub;stroke-width:0.160141"
+           id="tspan12789">o</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.63581px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.115896"
+       x="27.907179"
+       y="93.27388"
+       id="text18411"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan18409"
+         style="stroke-width:0.115896"
+         x="27.907179"
+         y="93.27388">O</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.86145px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.121537"
+       x="72.884201"
+       y="48.609051"
+       id="text20203"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan20201"
+         style="stroke-width:0.121537"
+         x="72.884201"
+         y="48.609051">y</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.86145px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.121537"
+       x="11.519027"
+       y="56.210178"
+       id="text20207"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan20205"
+         style="stroke-width:0.121537"
+         x="11.519027"
+         y="56.210178">x</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.86145px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.121537"
+       x="26.721275"
+       y="20.058489"
+       id="text20211"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan20209"
+         style="stroke-width:0.121537"
+         x="26.721275"
+         y="20.058489">z</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.16829px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.129208"
+       x="32.685093"
+       y="63.677967"
+       id="text21249"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan21247"
+         style="stroke-width:0.129208"
+         x="32.685093"
+         y="63.677967">ω</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.4862px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.137155"
+       x="40.809658"
+       y="70.892708"
+       id="text22323"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan22321"
+         style="stroke-width:0.137155"
+         x="40.809658"
+         y="70.892708">ɛ</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.252302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Send)"
+       d="m 41.294163,67.092841 h 1.944672"
+       id="path22570"
+       inkscape:path-effect="#path-effect22572"
+       inkscape:original-d="m 41.294163,67.092841 c 0.648476,2.52e-4 1.944672,0 1.944672,0"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.252302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Send)"
+       d="M 33.629299,59.959127 H 35.57397"
+       id="path22752"
+       inkscape:path-effect="#path-effect22756"
+       inkscape:original-d="m 33.629299,59.959127 c 0.648476,2.52e-4 1.944671,0 1.944671,0"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.63581px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.115896"
+       x="27.351"
+       y="40.066013"
+       id="text22859"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan22857"
+         style="stroke-width:0.115896"
+         x="27.351"
+         y="40.066013">O</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1539)"
+       d="M 31.085636,40.397152 52.651686,29.848315"
+       id="path22894"
+       inkscape:path-effect="#path-effect22896"
+       inkscape:original-d="m 31.085636,40.397152 c 7.158048,-3.546914 14.37763,-7.032295 21.56605,-10.548837"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <circle
+       style="fill:#bc2122;fill-opacity:0.981796;stroke:#bc2122;stroke-width:0.474614;stroke-linecap:round;stroke-linejoin:round"
+       id="path23000"
+       cx="55.061798"
+       cy="28.643257"
+       r="1.4958383"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.63581px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.115896"
+       x="56.579399"
+       y="26.158422"
+       id="text23192"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan23190"
+         style="stroke-width:0.115896"
+         x="56.579399"
+         y="26.158422">m</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1539)"
+       d="M 32.152795,91.868268 58.353676,71.493588"
+       id="path23724"
+       inkscape:path-effect="#path-effect23728"
+       inkscape:original-d="M 32.152795,91.868268 C 39.310843,88.321354 51.165256,75.01013 58.353676,71.493588"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <circle
+       style="fill:#bc2122;fill-opacity:0.981796;stroke:#bc2122;stroke-width:0.474614;stroke-linecap:round;stroke-linejoin:round"
+       id="circle23829"
+       cx="60.623596"
+       cy="69.80056"
+       r="1.4958383"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.63581px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.115896"
+       x="62.141197"
+       y="67.315727"
+       id="text23833"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan23831"
+         style="stroke-width:0.115896"
+         x="62.141197"
+         y="67.315727">m</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.77549px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.119388"
+       x="38.961647"
+       y="34.509727"
+       id="text25778"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan25776"
+         style="stroke-width:0.119388;font-style:italic"
+         x="38.961647"
+         y="34.509727">r</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.252302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Send)"
+       d="m 39.131131,31.042313 h 1.944672"
+       id="path26612"
+       inkscape:path-effect="#path-effect26616"
+       inkscape:original-d="m 39.131131,31.042313 c 0.648476,2.52e-4 1.944672,0 1.944672,0"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.77549px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.119388"
+       x="43.615444"
+       y="80.7855"
+       id="text26620"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan26618"
+         style="font-style:italic;stroke-width:0.119388"
+         x="43.615444"
+         y="80.7855">r</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.252302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Send)"
+       d="m 43.784926,77.318082 h 1.944672"
+       id="path26622"
+       inkscape:path-effect="#path-effect26626"
+       inkscape:original-d="m 43.784926,77.318082 c 0.648476,2.52e-4 1.944672,0 1.944672,0"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;stroke:#ca4436;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker26747)"
+       d="m 62.400188,70.00357 9.176496,2.359671"
+       id="path26661"
+       inkscape:path-effect="#path-effect26663"
+       inkscape:original-d="m 62.400188,70.00357 c 3.059096,0.786824 6.117928,1.57338 9.176496,2.359671"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.63581px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.115896"
+       x="73.284088"
+       y="73.739273"
+       id="text26775"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan26773"
+         style="stroke-width:0.115896"
+         x="73.284088"
+         y="73.739273">F</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.252302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Send)"
+       d="m 73.608545,69.649151 h 1.944672"
+       id="path26879"
+       inkscape:path-effect="#path-effect26883"
+       inkscape:original-d="m 73.608545,69.649151 c 0.648476,2.52e-4 1.944672,0 1.944672,0"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <path
+       style="fill:none;stroke:#ca4436;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker26747)"
+       d="m 56.435464,29.299246 9.176496,2.359671"
+       id="path26885"
+       inkscape:path-effect="#path-effect26889"
+       inkscape:original-d="m 56.435464,29.299246 c 3.059096,0.786824 6.117928,1.57338 9.176496,2.359671"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.63581px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.115896"
+       x="67.319366"
+       y="33.03495"
+       id="text26893"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327"><tspan
+         sodipodi:role="line"
+         id="tspan26891"
+         style="stroke-width:0.115896"
+         x="67.319366"
+         y="33.03495">F</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.252302px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Send)"
+       d="m 67.643821,28.944827 h 1.944672"
+       id="path26895"
+       inkscape:path-effect="#path-effect26899"
+       inkscape:original-d="m 67.643821,28.944827 c 0.648476,2.52e-4 1.944672,0 1.944672,0"
+       inkscape:export-filename="/mnt/data/Documents/Classes/matlab/ODE-OrbitalMotion/noninertial_eq.png"
+       inkscape:export-xdpi="300.10327"
+       inkscape:export-ydpi="300.10327" />
+  </g>
+</svg>

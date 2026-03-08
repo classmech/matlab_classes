@@ -1,0 +1,13 @@
+\frametitle{Уравнения движения}
+Векторная запись:
+$$
+  m \vec a = \vec F
+$$
+Координатная запись уравнений движения:
+$$
+\begin{aligned}
+  & m a_x = F_x = - F \cos (\widehat{X,-\vec F}) = - F \cos (\widehat{X, r_0}) = - F \cdot{\;} \frac{x}{r_0}, \\
+  & m a_y = F_y = - F \cos (\widehat{Y,-\vec F}) = - F \cos (\widehat{Y, r_0}) = - F \cdot \frac{y}{r_0}, \\
+  & m a_z = F_z = - F \cos (\widehat{Z,-\vec F}) = - F \cos (\widehat{Z, r_0}) = - F \cdot \frac{z}{r_0}.
+\end{aligned}
+$$

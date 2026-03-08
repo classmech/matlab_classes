@@ -1,0 +1,21 @@
+\frametitle{Экспорт в файл}
+Экпорт в растровый формат (png)
+\begin{lstlisting}
+t=0:0.01:10;
+x=cos(t);
+y=sin(t);
+plot(x,y);
+
+print('filename','-dpng','-r300');
+\end{lstlisting}
+
+Экпорт в векторный формат (pdf)
+\begin{lstlisting}
+figure('PaperUnits','Centimeters','PaperSize',[16,10]);
+t=0:0.01:10;
+x=cos(t);
+y=sin(t);
+plot(x,y);
+
+print('plot_figure','-dpdf','-fillpage');
+\end{lstlisting}

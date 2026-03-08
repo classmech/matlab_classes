@@ -1,0 +1,171 @@
+%\documentclass[12pt, compress]{beamer} 
+%\documentclass[notes=only]{beamer}
+
+\usepackage{fontspec}
+
+\setsansfont{PT Sans}
+\setmonofont{PT Mono}
+
+\usepackage{beamerthemesplit}
+\usefonttheme[onlymath]{serif}
+%\DeclareFontEncoding{T1}
+\fontencoding{T1}
+
+%\usepackage[T2A]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{listings}
+
+
+\usepackage{amsmath,amssymb,amsthm}
+\hypersetup{unicode=true}
+
+\usepackage{color}
+\definecolor{mygred}{RGB}{150,0,0} 
+\definecolor{mygreen}{RGB}{28,172,0} 
+\definecolor{mylilas}{RGB}{170,55,241}
+\definecolor{codecolor}{RGB}{0,120,0}
+\definecolor{emphcolor}{RGB}{0,0,120}
+\definecolor{gray}{RGB}{150,150,150}
+
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{light-green}{rgb}{0.93, 1, 0.8}
+\definecolor{light-yellow}{rgb}{1,1,0.85}
+\definecolor{light-red}{rgb}{0.8, 0.3, 0.3}
+
+\definecolor{dark-blue}{rgb}{0,0,0.6}
+\definecolor{dark-red}{rgb}{0.7,0.0,0.0}
+\definecolor{dark-green}{RGB}{10,150,0}
+
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\textcolor{green}{\ding{51}}}
+\newcommand{\xmark}{\textcolor{red}{\ding{55}}}
+
+\newcommand{\matcode}[1]{ \textcolor{codecolor}{\texttt{#1}}}
+\usepackage{graphics,graphicx}
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+\usepackage{booktabs}
+%\usepackage{media9}
+
+\usepackage[super]{natbib}
+ 
+\newcommand{\cleartitlepage}[1]{\begin{frame}[plain]\begin{center}\textsc{#1}\end{center}\end{frame}}
+
+\renewcommand{\emph}[1]{\textcolor{emphcolor}{#1}}
+\newcommand{\emphb}[1]{\textcolor{emphcolor}{\textbf{#1}}}
+
+
+\usetheme{CambridgeUS}
+\usecolortheme{lily}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning} 
+\tikzset{cbutton/.style={rectangle,minimum width=10mm,thick,draw=red!50!black!50,
+top color=white,bottom color=red!50!black!30}}
+\tikzset{mbutton/.style={rectangle,minimum width=10mm,thick,draw=black!20,
+top color=white,bottom color=black!30}}
+
+
+\lstset{basicstyle=\ttfamily\footnotesize,
+    language=Python,    
+    keepspaces=true,
+    extendedchars=true,
+    basicstyle={\footnotesize  \color{black}},
+    breaklines=true,    
+    keywordstyle=\color{blue},
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{codecolor}},
+    identifierstyle={ \bf \color{black} },
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,
+    numbers=left,%
+    numberstyle={\tiny \color{black}},
+    numbersep=7pt, 
+    emph=[1]{case,switch,otherwise},emphstyle=[1]\color{blue}, 
+    frame=single,    
+    rulecolor=\color{red},    
+    backgroundcolor=\color{light-gray},
+    xleftmargin=0.3cm,
+    frame=l,framesep=4pt,framerule=0.5pt,
+    showspaces=false,
+    escapechar=|
+    %lineskip=-0.3pt,
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{navigation symbols}{}
+
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+    %\insertframenumber{} \hspace*{0.1ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+% define colours
+% taken from pickton on Adobe Kuler:
+% https://kuler.adobe.com/Some-Kind-Of-Execushares-color-theme-3837185/
+ \definecolor{ExecusharesRed}{RGB}{230,37,52}
+ \definecolor{ExecusharesBlack}{RGB}{43,40,40}
+ \definecolor{ExecusharesBlue}{RGB}{22,190,207}
+ \definecolor{ExecusharesWhite}{RGB}{255,255,243}
+ \definecolor{ExecusharesGrey}{RGB}{107,110,108}
+
+% \setbeamertemplate{itemize item}{
+%  \tikz{
+%    \draw[fill=emphcolor,draw=none] (0, 0) rectangle(0.1, 0.1);
+%    \draw[fill=emphcolor,draw=none] (0.1, 0.1) rectangle(0.2, 0.2);
+%    \draw[fill=emphcolor,draw=none] (0, 0.2) rectangle(0.1, 0.3);
+%  }
+% }
+
+\AtBeginSection[]{
+  \begin{frame}[plain]
+  %\vfill  
+  \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);  
+  \fill[color=mygred]   (-1cm, 3.9cm) rectangle(\the\paperwidth, 5.9cm);
+  %\usebeamerfont{title}\insertsectionhead\par%
+  %\node[text width=\the\paperwidth,align=center] at (current page.center) {\color{ExecusharesWhite}\Large\textbf{\insertsectionhead}};  
+  \node[text width=\the\paperwidth,align=center] at (6cm,4.9cm) {\color{ExecusharesWhite}\Large\textbf{\insertsectionhead}};  
+  \end{tikzpicture}
+  \end{frame}
+}
+
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%  
+  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%  
+  \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+    \insertframenumber{} \hspace*{1ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\setbeamercolor{frametitle}{fg=dark-red,bg=gray!10}
+\setbeamerfont{title}{series=\bfseries,parent=structure}
+\setbeamerfont{frametitle}{series=\bfseries,parent=structure}
