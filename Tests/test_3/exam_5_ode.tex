@@ -1,0 +1,129 @@
+\documentclass[addpoints,12pt]{exam}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,260mm},
+ left=20mm,
+ top=20mm,
+ }
+
+\usepackage{amsmath,amssymb,amsthm}
+\DeclareFontEncoding{T1}
+\fontencoding{T1}
+\usepackage[T2A]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{graphics,graphicx}
+\usepackage{indentfirst}
+
+\usepackage{verbatim}
+\usepackage{fancyvrb}  
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\usepackage{listings}
+\usepackage{color}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Решение:}\par\noindent}
+
+\definecolor{gray}{gray}{0.5}
+
+\lstset{basicstyle=\ttfamily,
+    language=Matlab,    
+    keepspaces=true,
+    extendedchars=\true,
+    identifierstyle={ \bf \color{black} },
+    showstringspaces=false,
+    numbers=left,%
+    numbersep=7pt,  
+    emph=[1]{case,switch,otherwise,nonlocal,as,yield,zip,print},    
+    frame=single,    
+    xleftmargin=0.3cm,
+    frame=l,framesep=4pt,framerule=0.5pt,
+    numberstyle={\scriptsize \color{gray}}
+}
+
+
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheader{ИнтМатПак}{MATLAB 3}{10 марта 2026}
+\runningheader{ИнтМатПак}
+{MATLAB 3, Стр. \thepage\ из \numpages}
+{10 марта 2026}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+\pointname{} 
+\boxedpoints
+%\pointsinmargin
+\pointsinrightmargin
+
+
+%\header{MATLAB 1}
+%}
+%{
+%	\hfill 29.05.2023
+%}
+
+% \footer{Заведующий кафедрой математических методов в экономике}
+% {}
+% {
+%     \hfill проф. Гераськин М. И.
+% }
+
+
+\begin{document}
+%\begin{center}
+%\fbox{\fbox{\parbox{5.5in}{\centering
+%Правильный.}}}
+%\end{center}
+\vspace{0.1in}
+\makebox[\linewidth]{Ф. И. О. \enspace \hrulefill \enspace  группа: \enspace\hrulefill}
+\vspace{0.1in}
+
+\begin{questions}
+
+\question
+Поведение динамической системы описывается дифференциальным уравнением второго порядка
+$$
+    m \ddot{x} + a x = 2 x \sin(bt)
+$$
+\begin{parts}  
+
+\renewcommand\partlabel{а)}    
+\part[2]
+Разработайте программу для численного интегрирования этого дифференциального уравнения. Напишите файл-функцию правых частей: 
+\fillwithdottedlines{8cm}
+
+
+\renewcommand\partlabel{б)}
+\part[1]
+Постройте график $\dot{x}(t)$ и напишите код, который определяет максимум этой функции на интервале от 3 до 5 c для $a = 5$, $b = 8$, $m = 4$ и начальных условий $x(0)=1$, $\dot{x}(0)=0$:
+\fillwithdottedlines{4cm}
+
+\renewcommand\partlabel{в)}
+\part[1]
+Чему равно значение локального максимума функции $\dot{x}(t)$ на интервале от 3 до 5 с? Ответ запишите с точностью до 4 значащих цифр.
+\answerline[1.126]
+
+\renewcommand\partlabel{г)}
+\part[1]
+Постройте фазовый портрет $(x,\dot{x})$ для $t \in [0,10]$. Чему равно расстояние от точки $[x(t_1),\dot{x}(t_1)]$ до начала координат фазовой плоскости при $t_1=10$ c? Ответ запишите с точностью до 3 значащих цифр.
+\answerline[1.11]
+
+\end{parts}
+
+\end{questions}
+
+\hqword{Вопрос:}
+\hpword{Баллы:}
+\hsword{Ответ:}
+\htword{Сумма}
+
+\vfill
+
+\begin{center}
+\gradetable[h][questions]
+\end{center}
+
+\end{document}

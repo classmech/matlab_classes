@@ -1,0 +1,125 @@
+\documentclass[addpoints,12pt]{exam}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,260mm},
+ left=20mm,
+ top=20mm,
+ }
+
+\usepackage{amsmath,amssymb,amsthm}
+\DeclareFontEncoding{T1}
+\fontencoding{T1}
+\usepackage[T2A]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{graphics,graphicx}
+\usepackage{indentfirst}
+
+\usepackage{verbatim}
+\usepackage{fancyvrb}  
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\usepackage{listings}
+\usepackage{color}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Решение:}\par\noindent}
+
+\definecolor{gray}{gray}{0.5}
+
+\lstset{basicstyle=\ttfamily,
+    language=Matlab,    
+    keepspaces=true,
+    extendedchars=\true,
+    identifierstyle={ \bf \color{black} },
+    showstringspaces=false,
+    numbers=left,%
+    numbersep=7pt,  
+    emph=[1]{case,switch,otherwise,nonlocal,as,yield,zip,print},    
+    frame=single,    
+    xleftmargin=0.3cm,
+    frame=l,framesep=4pt,framerule=0.5pt,
+    numberstyle={\scriptsize \color{gray}}
+}
+
+
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheader{ИнтМатПак}{MATLAB 2}{2 марта 2026}
+\runningheader{ИнтМатПак}
+{MATLAB 2, Стр. \thepage\ из \numpages}
+{2 марта 2026}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+\pointname{} 
+\boxedpoints
+%\pointsinmargin
+\pointsinrightmargin
+
+
+%\header{MATLAB 1}
+%}
+%{
+%	\hfill 29.05.2023
+%}
+
+% \footer{Заведующий кафедрой математических методов в экономике}
+% {}
+% {
+%     \hfill проф. Гераськин М. И.
+% }
+
+
+\begin{document}
+%\begin{center}
+%\fbox{\fbox{\parbox{5.5in}{\centering
+%Правильный.}}}
+%\end{center}
+\vspace{0.1in}
+\makebox[\linewidth]{Ф. И. О. \enspace \hrulefill \enspace  группа: \enspace\hrulefill}
+\vspace{0.1in}
+
+\begin{questions}
+
+\question[3]
+Напишите файл-функцию, которая в качестве аргумента принимает прямоугольную матрицу $A$ размером $n \times m$ случайных чисел, равномерно распределенных в интервале от 0 до 1, и возвращает матрицу размером $n \times 2$. Первый столбец матрицы-результата содержит количество элементов в соответствующей строке матрицы $A$ со значениями меньше 0.5, второй столбец -- количество элементов в строке матрицы $A$ больших 0.9. Напишите два варианта кода файл-функции: с использованием и без использования циклов.
+\makeemptybox{7.8cm}
+
+% \question[3] 
+% Напишите файл-функцию, которая первым аргументом принимает массив $A$ произвольной длины, заполненный случайными числами, равномерно распределенными в интервале от 0 до 1, и вторым аргументом -- количество отрезков $n \geq 1$, на которые равномерно разбивается интервал [0; 1] (например, для $n=2$ это будут два интервала $[0; 0.5]$ и $(0.5; 1]$). Функция должна возвращать столбец $n \times 1$ с количеством элементов из массива $A$, попадающих в каждый интервал.
+% \makeemptybox{8.5cm}
+
+\question[3] 
+Некоторая функция $f(t)$ задана таблично на равномерной сетке $t_0, t_1 = t_0+\Delta t, t_2 = t_0+2\Delta t,\ldots,t_n = t_0+n\Delta t$ ($n>1, \Delta t>0$). Напишите функцию, которая в качестве аргументов принимает массив времени $t$, массив значений функции $f$ и возвращает матрицу $n \times 2$, содержащую только те пары  $(t_k, f(t_k))$, для которых выполняется условие убывания: $ f(t_k)-f(t_{k-1})<0 $.
+
+\makeemptybox{9cm}
+
+\question[3] Движение тела по эллиптической орбите в задаче двух тел описывается уравнением Кеплера:
+$$
+E - e \sin E = M
+$$
+где $e$ -- эксцентриситет орбиты ($0 \leq e < 1$), $E$ -- эксцентрическая аномалия, $M$ -- средняя аномалия.
+Для определения эксцентрической аномалии по известной средней аномалии для орбиты с известным эксцентриситетом может метод простой итерации:
+\begin{equation}\label{iter}
+    E_{k+1} = e \sin E_k + M, \; k=0,\ldots,n 
+\end{equation}
+при этом в качестве начального приближения $E_0$ принимают известное значение $M$. 
+
+Напишите файл-функцию, которая принимает в качестве аргументов эксцентриситет $e$, среднюю аномалию $M$ и заданную точность $\varepsilon$ и возвращает эксцентрическую аномалию, вычисленную с заданной точностью. Для вычисления эксцентрической аномалии использовать описанный выше итерационный процесс \eqref{iter} пока $|E_{k+1}-E_{k}|>\varepsilon$.
+\makeemptybox{6cm}
+\end{questions}
+
+\hqword{Вопрос:}
+\hpword{Баллы:}
+\hsword{Ответ:}
+\htword{Сумма}
+
+\vfill
+
+\begin{center}
+\gradetable[h][questions]
+\end{center}
+
+\end{document}

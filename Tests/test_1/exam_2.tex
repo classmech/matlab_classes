@@ -1,0 +1,191 @@
+\documentclass[addpoints,12pt]{exam}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,260mm},
+ left=20mm,
+ top=15mm,
+ }
+
+\usepackage{amsmath,amssymb,amsthm}
+\DeclareFontEncoding{T1}
+\fontencoding{T1}
+\usepackage[T2A]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{graphics,graphicx}
+\usepackage{indentfirst}
+
+\usepackage{verbatim}
+\usepackage{fancyvrb}  
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\usepackage{listings}
+\usepackage{color}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Решение:}\par\noindent}
+
+\definecolor{gray}{gray}{0.5}
+
+\lstset{basicstyle=\ttfamily,
+    language=Matlab,    
+    keepspaces=true,
+    extendedchars=\true,
+    identifierstyle={ \bf \color{black} },
+    showstringspaces=false,
+    numbers=left,%
+    numbersep=7pt,  
+    emph=[1]{case,switch,otherwise,nonlocal,as,yield,zip,print},    
+    frame=single,    
+    xleftmargin=0.3cm,
+    frame=l,framesep=4pt,framerule=0.5pt,
+    numberstyle={\scriptsize \color{gray}}
+}
+
+
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheader{ИнтМатПак}{MATLAB 1}{10 февраля 2026}
+\runningheader{ИнтМатПак}
+{MATLAB 1, Стр. \thepage\ из \numpages}
+{10 февраля 2026}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+\pointname{} 
+\boxedpoints
+%\pointsinmargin
+\pointsinrightmargin
+
+
+%\header{MATLAB 1}
+%}
+%{
+%	\hfill 29.05.2023
+%}
+
+% \footer{Заведующий кафедрой математических методов в экономике}
+% {}
+% {
+%     \hfill проф. Гераськин М. И.
+% }
+
+
+\begin{document}
+%\begin{center}
+%\fbox{\fbox{\parbox{5.5in}{\centering
+%Правильный.}}}
+%\end{center}
+\vspace{0.1in}
+\makebox[\textwidth]{Ф. И. О., группа: \enspace\hrulefill}
+\vspace{0.1in}
+
+\begin{questions}
+
+\question[1]
+Какой последний элемент будет содержаться в матрице B в результате выполнения этого кода?
+\begin{lstlisting}
+A = reshape(1:64,8,8);
+B = A(3:6, 3:6); 
+\end{lstlisting}
+\begin{checkboxes}
+\CorrectChoice 46;
+\choice 45; 
+\choice 38;
+\choice 37; 
+\choice все ответы неверны.
+\end{checkboxes}
+
+\question[1] 
+Напишите код, который извлекает в переменную C каждый второй столбец матрицы A из предыдущего задания:
+\begin{solutionorlines}[1cm]
+\end{solutionorlines}
+
+\question[1] Кинетическая энергия углового движения твердого тела определяется матричным выражением $ T = \boldsymbol{\omega}^T \boldsymbol{J} \boldsymbol{\omega} / 2$, где $\boldsymbol{\omega}$ - координатный столбец угловой скорости тела, $\boldsymbol{J}$ - матрица (3x3) тензора инерции тела. В сессии MATLAB определены переменные 
+\begin{lstlisting}
+J = [1,2,3]; % диагональные элементы диагональной матрицы тензора инерции 
+w = [0.5, 0.2, 0.3]; % компоненты угловой скорости
+\end{lstlisting}
+Выберите верный код для вычисления кинетической энергии:
+\begin{checkboxes}
+\choice  \ttfamily{T = 0.5*w*J'*w'};
+\choice  \ttfamily{T = 0.5*w'*J*w};
+\CorrectChoice  \ttfamily{T = 0.5*w*diag(J)*w'};
+\choice  \ttfamily{T = 0.5*w*diag(J)*w'};
+\end{checkboxes}
+
+\question[1] Чему будет равна переменная b?
+\begin{lstlisting}
+a = [7,3,6,8,2,4];
+b = reshape(a,2,3);
+\end{lstlisting}
+\begin{checkboxes}
+\choice  [7, 3, 8; 6, 2, 4]
+\CorrectChoice [7, 6, 2; 3, 8, 4]
+\choice  [7, 3; 8, 6; 2, 4]
+\choice  [7, 6; 2, 3; 8, 4]
+\end{checkboxes}
+
+\question[1] Есть матрица temperatures размером 30×24, представляющая температуру (в градусах Цельсия) каждый час в течение 30 дней (строка — день, столбец — час). Напишите код, который определяет среднюю температуру для каждого дня (результат — вектор-столбец 30×1).
+\begin{solutionorlines}[2cm]
+\end{solutionorlines}
+ 
+\question[1] Чему будет равна переменная i в результате выполнения кода?
+\begin{lstlisting}
+a = [7,3,6,4];
+[~,i] = sort(a);
+\end{lstlisting}
+\begin{checkboxes}
+\CorrectChoice \texttt{[2,4,3,1]}
+\choice \texttt{[1,3,4,2]}
+\choice \texttt{[3,4,6,7]}
+\choice \texttt{[7,6,4,3]}
+\end{checkboxes}
+
+\question[1] Чему будет равна переменная a?
+\begin{lstlisting}
+a = sum([7,6,3,9].*[0,1,0,1])
+\end{lstlisting}    
+\begin{checkboxes}
+\choice 7;
+\choice 9;
+\CorrectChoice 15;
+\choice выведется сообщение об ошибке.
+\end{checkboxes}
+
+\question[1] Координаты двух точек в пространстве заданы матрицами-строками \texttt{A = [1,2,0]; B = [3,1,1]}. Напишите код, который определяет расстояние между этими двумя точками.
+\begin{solutionorlines}[1cm]
+\end{solutionorlines}
+
+\question[1] 
+Дана матрица X размером 50x50, заполненная нормально-распределенными случайными числами (мат. ожидание равно 20, стандартное отклонение равно 10): 
+\begin{lstlisting}
+X = randn(50, 50) * 10 + 20; 
+\end{lstlisting}
+Напишите код, который извлекает <<периметр>> матрицы X (первая и последняя строки, первый и последний столбцы) в линейный вектор \texttt{perimeter\_vec}, идущий по часовой стрелке, начиная с элемента (1,1).
+\begin{solutionorlines}[2cm]
+    \texttt{perimeter\_vec} = 
+\end{solutionorlines}
+
+\question[1] 
+Напишите код, который в последнем столбце матрицы из предыдущего задания (\texttt{X(:, end)}) все значения, превышающие 30, увеличивает в два раза (должна изменится матрица X).
+\begin{solutionorlines}[2cm]
+\end{solutionorlines}
+
+\end{questions}
+
+\hqword{Вопрос:}
+\hpword{Баллы:}
+\hsword{Ответ:}
+\htword{Сумма}
+
+\vfill
+
+\begin{center}
+\gradetable[h][questions]
+\end{center}
+
+% Отлично: 12,13; Хорошо: 8,9,10; Удовлетворительно 5,6,7
+
+\end{document}
