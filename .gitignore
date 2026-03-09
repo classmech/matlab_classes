@@ -1,10 +1,13 @@
 *.aux
-*.fbd_latexmk
+*.fdb_latexmk
 *.log
 *.snm
+*.synctex.gz
 *.gz
 *.toc
 *.fls
 *.out
 *.nav
+*.vrb
+*.xdv
 *.DS_Store
